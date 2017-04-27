@@ -1,3 +1,4 @@
+import textwrap
 import math
 import random
 import requests
@@ -18,18 +19,21 @@ class Category(object):
             if str(new_question.value) not in self.questions and new_question.value:
                 self.questions[str(new_question.value)] = new_question
 
-    def display_square(self):
-        lines = ["","",""]
-        title_length = len(self.title)
-        if title_length <= 13:
-            display = "{0: ^13}".format(self.title)+"|"
-            lines = ["             |", display, "              |"]
-        else:
-            display = "FIX FIX FIX"
-            lines = ["             |", display, "              |"]
-        return lines[1]
+    def display_square_lines(self):
+        box_width = 13
+        # if len(self.title) <= 13:
+        display = "{0: ^13}".format(self.title)+"|"
+            # lines = [display, "              |"]
+        # else:
+            #split around the middle and place
+            # display = textwrap.wrap(self.title, box_width)
+            # lines = [display, "              |"]
+        return display
 
+def center_string(text, width): #takes in text and total width of string and centers in that string
+    to_format ="{0: ^"+str(width)+"}"
+    centered_string = to_format.format(text)
 
 
 new_category = Category(random.randint(1,1000))
-print new_category.display_square()
+print new_category.display_square_lines()

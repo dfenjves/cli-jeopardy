@@ -31,7 +31,7 @@ class Board(object):
     def display_category_row(self):
         row = self.line+ self.filler +"|"
         for category in self.categories:
-            row += category.display_square()
+            row += category.display_square_lines()
         row += "\n" + self.filler + self.line
         print row
 
