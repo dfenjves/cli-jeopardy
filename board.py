@@ -15,7 +15,7 @@ class Board(object):
     #The functions below are for displaying the board:
 
     def display_row(self, val):
-        row = self.line+ self.filler +"|"
+        row = self.filler +"|"
         for category in self.categories:
             if str(val) in category.questions:
                 row += category.questions[str(val)].display()
