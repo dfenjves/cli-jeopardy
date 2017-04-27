@@ -21,19 +21,22 @@ class Category(object):
 
     def display_square_lines(self):
         box_width = 13
-        # if len(self.title) <= 13:
-        display = "{0: ^13}".format(self.title)+"|"
-            # lines = [display, "              |"]
-        # else:
+        display = ""
+        if len(self.title) <= 13:
+            display = "{0: ^13}".format(self.title)+"|"
+            lines = [display, "             |"]
+        else:
             #split around the middle and place
-            # display = textwrap.wrap(self.title, box_width)
-            # lines = [display, "              |"]
-        return display
+            split_lines = textwrap.wrap(self.title, box_width)
+            line1 = "{0: ^13}".format(split_lines[0])+"|"
+            line2 = "{0: ^13}".format(split_lines[1])+"|"
+            lines = [line1, line2]
+        return lines
 
 def center_string(text, width): #takes in text and total width of string and centers in that string
     to_format ="{0: ^"+str(width)+"}"
     centered_string = to_format.format(text)
 
 
-new_category = Category(random.randint(1,1000))
-print new_category.display_square_lines()
+# new_category = Category(random.randint(1,1000))
+# print new_category.display_square_lines()
