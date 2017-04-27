@@ -44,6 +44,6 @@ class Board(object):
 
 
 
-new_board = Board()
-# new_board.display_all_question_rows()
-new_board.display_whole_board()
+# new_board = Board()
+# # new_board.display_all_question_rows()
+# new_board.display_whole_board()
