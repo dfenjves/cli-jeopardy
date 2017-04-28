@@ -18,7 +18,7 @@ class Question(object):
         if self.unused:
             card ="     " + str(self.value) + "     |"
         else:
-            card = "   " + " X " + "   |"
+            card = "     " + " X " + "     |"
         return card
 
     def ask(self):
